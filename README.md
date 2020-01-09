@@ -13,8 +13,7 @@
 
 ![Image_5](/img/capstone-5.png)
 
-![Image_5](/img/capstone-12.png)
-
+![Image_12](/img/capstone-12.png)
 
 ![Image_6](/img/capstone-6.png)
 
