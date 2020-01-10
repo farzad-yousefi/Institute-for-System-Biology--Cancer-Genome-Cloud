@@ -205,6 +205,53 @@ ax.tick_params(axis='both', which='major', labelsize=25);
 ```
 ![Image_5](/img/5.png)
 
+### plotting Time spent in PAX fixative vs. Expression Profiling Efficiency
+
+```python
+fig, ax = plt.subplots(figsize = (12,7))
+ax.scatter(df['SMTSPAX'], df['SMEXPEFF'], c = df['SMEXPEFF'], cmap = 'Accent')
+ax.set_xlabel('Time a sample spent in the PAXgene fixative', size = 25)
+ax.set_ylabel('Expression Profiling Efficiency:\n Ratio of exon reads to total reads', size =25)
+ax.tick_params(axis='both', which='major', labelsize=20);
+```
+![Image_5](/img/6.png)
+
+### plotting Total ischemic time vs. Expression Profiling Efficiency
+```python
+fig, ax = plt.subplots(figsize = (12,7))
+ax.scatter(df['SMTSISCH'], df['SMEXPEFF'], c = df['SMEXPEFF'], cmap = 'Accent')
+ax.set_xlabel('Total Ischemic time for a sample', size = 25)
+ax.set_ylabel('Expression Profiling Efficiency:\n Ratio of exon reads to total reads', size = 25)
+ax.tick_params(axis='both', which='major', labelsize=20);
+
+```
+![Image_5](/img/7.png)
+
+### plotting Total ischemic time vs. Autolysis score
+```python
+fig, ax = plt.subplots(figsize = (12,7))
+ax.scatter(df['SMRIN'], df['SMATSSCR'], c = df['SMRIN'], cmap = 'Accent')
+ax.set_xlabel('Total Ischemic time for a sample', size =25)
+ax.set_ylabel('Autolysis Score', size = 25)
+ax.tick_params(axis='both', which='major', labelsize=20);
+
+```
+![Image_5](/img/8.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Built With
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
