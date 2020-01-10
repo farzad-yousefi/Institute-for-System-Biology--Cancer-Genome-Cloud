@@ -132,6 +132,7 @@ new_df.drop(columns = columns_to_drop, inplace = True)
 new_df.shape
 (12102, 52)
 ```
+### It is always useful to get an overall idea of the whole dataset and narrow it down from there
 ### plotting the histograms of the whole numeric data
 ```
 new_df.hist(figsize= (30,30), bins = 50)
