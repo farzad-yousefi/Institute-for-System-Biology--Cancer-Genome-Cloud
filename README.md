@@ -306,6 +306,14 @@ ax.set_xlabel('Ischemic time', size = 27);
 
 ![Image_5](/img/18.png)
 
+## Results
+
+Tests used for hypothesis testing and p-value calculation:
+       T-test
+       U-test
+Results:
+       P-values from both methods were very small ~ e-8
+       Based on the calculated p-values, null hypothesis was rejected very confidently.
 
 
 
@@ -320,7 +328,3 @@ ax.set_xlabel('Ischemic time', size = 27);
 ## Acknowledgments
 
 * Galvanize
-
-
-
->>>>>>> 301a406916436cd9751b68343edc29a78123cff1
