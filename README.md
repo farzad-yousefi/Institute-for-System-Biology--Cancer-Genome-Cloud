@@ -1,6 +1,7 @@
 # Study of Sample Atrributes Used for Genomic Databases Development
 
-Correlations between genotype and tissue-specific gene expression levels will help identify regions of the genome that influence whether and how much a gene is expressed. GTEx helps researchers to understand inherited susceptibility to disease and will be a resource database and tissue bank for many studies in the future.
+The Genotype-Tissue Expression (GTEx) project aims to provide to the scientific community a resource with which to study human gene expression and regulation and its relationship to genetic variation. This project will collect and analyze multiple human tissues from donors who are also densely genotyped, to assess genetic variation within their genomes.
+Correlations between genotype and tissue-specific gene expression levels will help identify regions of the genome that influence whether and how much a gene is expressed.
 
 ## importing libraries
 
@@ -13,21 +14,18 @@ import scipy.stats as stats
 %matplotlib inline
 ```
 
-### Break down into end to end tests
+### importing csv file by Pandas
 
-Explain what these tests test and why
-
-```
-Give an example
+```python
+df = pd.read_csv('3.csv')
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
+### original shape of the dataframe
+```python
+df.shape
 ```
-Give an example
-```
+(14900, 64)
+
 
 ## Deployment
 
