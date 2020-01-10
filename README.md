@@ -23,8 +23,9 @@ df = pd.read_csv('3.csv')
 ### original shape of the dataframe
 ```python
 df.shape
-```
 (14900, 64)
+```
+
 
 
 ## Deployment
