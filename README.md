@@ -192,6 +192,19 @@ ax.set_xlabel('Autolysis Score, assigned by a pathologist\nduring a visual inspe
 ax.set_ylabel('Total Ischemic time for a sample')
 ```
 ![Image_5](/img/4.png)
+
+### plotting Autolysis score vs. RIN number
+```python
+fig, ax = plt.subplots(figsize = (12,7))
+ax.bar(df.groupby('SMATSSCR').mean().index, df.groupby('SMATSSCR').mean()['SMRIN'])
+ax.set_ylim(6,7.5)
+ax.set_xlim(-1,4)
+ax.set_xlabel('Autolysis Score, assigned by a pathologist\nduring a visual inspection of the histology\n image. 0 to 3 (None, Mild, Moderate, and Severe)', size =25)
+ax.set_ylabel('RIN Number: RNA Integrity Number,\n as measured by Agilent Bioanalyzer',size = 25)
+ax.tick_params(axis='both', which='major', labelsize=25);
+```
+![Image_5](/img/5.png)
+
 ## Built With
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
