@@ -171,6 +171,17 @@ ax.set_title('Distribution of total ischemic time');
 ```
 ![Image_4](/img/2.png)
 
+### Understanding the distribution of autolysis scores
+
+```python
+fig, ax = plt.subplots(figsize = (10,4))
+ax.hist(df['SMATSSCR'], bins=10, stacked = False )
+ax.set_title('Distribution of Autolysis score', size = 37)
+ax.set_xlabel('Numeric score given by pathologists', size = 25)
+ax.tick_params(axis='both', which='major', labelsize=30);
+```
+![Image_5](/img/3.5.png)
+
 ### plotting Total Ischemic time vs. Autolysis score
 ```python
 fig, ax = plt.subplots()
