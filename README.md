@@ -112,7 +112,7 @@ SMDPMPRT 2
 SME2PCTS 11604
 ```
 ### Some cleaning--- getting rid of all rows with nan values
-```
+```python
 df1 = df.iloc[:147,:]
 df2 = df.iloc[160:7294,:]
 df3 = df.iloc[8828:12365,:]
@@ -125,14 +125,15 @@ new_df.shape
 (12102, 64)
 ```
 ### list of feautres to be droped from new_df dataframe
-``` columns_to_drop = ['SMMNCPB','SMNUM5CD', 'SMGAPPCT', 'SMCGLGTH', 'SMMNCV','SMCENTER','SMTSPAX','SMGTC','SMNUMGPS','SM550NRM', 'SM350NRM', 'SMPTHNTS']
+```python 
+columns_to_drop = ['SMMNCPB','SMNUM5CD', 'SMGAPPCT', 'SMCGLGTH', 'SMMNCV','SMCENTER','SMTSPAX','SMGTC','SMNUMGPS','SM550NRM', 'SM350NRM', 'SMPTHNTS']
 new_df.drop(columns = columns_to_drop, inplace = True)
 new_df.shape
 (12102, 52)
 ```
 ### It is always useful to get an overall idea of the whole dataset and narrow it down from there
 ### plotting the histograms of the whole numeric data
-```
+```python
 new_df.hist(figsize= (30,30), bins = 50)
 plt.tight_layout
 ```
@@ -140,13 +141,13 @@ plt.tight_layout
 Add additional notes about how to deploy this on a live system
 
 ### plotting scatterplots for 10 numeric features
-```
+```python
 pd.plotting.scatter_matrix(new_df.iloc[:,40:50], figsize=(30,30));
 ```
 ![Image_2](/img/13.png)
 
 ### Understanding the distribution of RIN
-```
+```python
 fig, ax = plt.subplots(figsize = (10,4))
 ax.hist(df['SMRIN'], bins=25, stacked = False )
 ax.set_title('Distribution of RIN');
@@ -155,7 +156,7 @@ ax.set_title('Distribution of RIN');
 
 
 ### Understanding the distribution of time spent in PAX fixitive
-```
+```python
 fig, ax = plt.subplots(figsize = (10,4))
 ax.hist(df['SMTSPAX'], bins=25, stacked = False )
 ax.set_title('Time spent in PAX fixative');
@@ -163,7 +164,7 @@ ax.set_title('Time spent in PAX fixative');
 ![Image_4](/img/3.png)
 
 ### Understanding the distribution of total ischemic time
-```
+```python
 fig, ax = plt.subplots(figsize = (10,4))
 ax.hist(df['SMTSISCH'], bins=25, stacked = False )
 ax.set_title('Distribution of total ischemic time');
@@ -171,7 +172,7 @@ ax.set_title('Distribution of total ischemic time');
 ![Image_4](/img/2.png)
 
 ### plotting Total Ischemic time vs. Autolysis score
-```
+```python
 fig, ax = plt.subplots()
 ax.bar(df.groupby('SMATSSCR').mean().index, df.groupby('SMATSSCR').mean()['SMTSISCH'])
 ax.set_ylim(400,900)
