@@ -41,7 +41,7 @@ Index(['SUBJID', 'SAMPID', 'SMATSSCR', 'SMCENTER', 'SMPTHNTS', 'SMRIN', 'SMTS',
        'SMNUM5CD', 'SMDPMPRT', 'SME2PCTS'],
       dtype='object')
 ```
-###finding unique values of all features and getting a sense of how many of them are there!
+### finding unique values of all features and getting a sense of how many of them are there!
 ```
 feature name, # 0f unique values
 SUBJID 752
@@ -109,7 +109,7 @@ SMNUM5CD 1
 SMDPMPRT 2
 SME2PCTS 11604
 ```
-###Some cleaning--- getting rid of all rows with nan values
+### Some cleaning--- getting rid of all rows with nan values
 ```
 df1 = df.iloc[:147,:]
 df2 = df.iloc[160:7294,:]
@@ -122,8 +122,8 @@ new_df = pd.concat([df1,df2,df3,df4,df5,df6,df7], axis = 0)
 new_df.shape
 (12102, 64)
 ```
-###list od feautres to be droped from new_df dataframe
-columns_to_drop = ['SMMNCPB','SMNUM5CD', 'SMGAPPCT', 'SMCGLGTH', 'SMMNCV','SMCENTER','SMTSPAX','SMGTC','SMNUMGPS','SM550NRM', 'SM350NRM', 'SMPTHNTS']
+### list od feautres to be droped from new_df dataframe
+``` columns_to_drop = ['SMMNCPB','SMNUM5CD', 'SMGAPPCT', 'SMCGLGTH', 'SMMNCV','SMCENTER','SMTSPAX','SMGTC','SMNUMGPS','SM550NRM', 'SM350NRM', 'SMPTHNTS']
 new_df.drop(columns = columns_to_drop, inplace = True)
 new_df.shape
 (12102, 52)
