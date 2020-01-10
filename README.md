@@ -41,9 +41,93 @@ Index(['SUBJID', 'SAMPID', 'SMATSSCR', 'SMCENTER', 'SMPTHNTS', 'SMRIN', 'SMTS',
        'SMNUM5CD', 'SMDPMPRT', 'SME2PCTS'],
       dtype='object')
 ```
-
-
-## Deployment
+###finding unique values of all features and getting a sense of how many of them are there!
+```
+feature name, # 0f unique values
+SUBJID 752
+SAMPID 14900
+SMATSSCR 5
+SMCENTER 9
+SMPTHNTS 7969
+SMRIN 56
+SMTS 31
+SMTSD 51
+SMUBRID 50
+SMTSISCH 1654
+SMTSPAX 1183
+SMNABTCH 1418
+SMNABTCHT 13
+SMNABTCHD 712
+SMGEBTCH 270
+SMGEBTCHD 201
+SMGEBTCHT 11
+SMAFRZE 5
+SMGTC 380
+SME2MPRT 11850
+SMCHMPRS 23
+SMNTRART 11984
+SMNUMGPS 1
+SMMAPRT 11752
+SMEXNCRT 12074
+SM550NRM 1
+SMGNSDTC 5691
+SMUNMPRT 2
+SM350NRM 1
+SMRDLGTH 3
+SMMNCPB 1
+SME1MMRT 12097
+SMSFLGTH 333
+SMESTLBS 2
+SMMPPD 12100
+SMNTERRT 12097
+SMRRNANM 12045
+SMRDTTL 12100
+SMVQCFL 12088
+SMMNCV 1
+SMTRSCPT 5747
+SMMPPDPR 12102
+SMCGLGTH 1
+SMGAPPCT 1
+SMUNPDRD 2
+SMNTRNRT 12097
+SMMPUNRT 11752
+SMEXPEFF 12091
+SMMPPDUN 12100
+SME2MMRT 12097
+SME2ANTI 12096
+SMALTALG 12098
+SME2SNSE 12098
+SMMFLGTH 388
+SME1ANTI 12097
+SMSPLTRD 12099
+SMBSMMRT 12098
+SME1SNSE 12097
+SME1PCTS 11725
+SMRRNART 12097
+SME1MPRT 11622
+SMNUM5CD 1
+SMDPMPRT 2
+SME2PCTS 11604
+```
+###Some cleaning--- getting rid of all rows with nan values
+```
+df1 = df.iloc[:147,:]
+df2 = df.iloc[160:7294,:]
+df3 = df.iloc[8828:12365,:]
+df4 = df.iloc[13375:13477,:]
+df5 = df.iloc[13570:14674,:]
+df6 = df.iloc[14768:14838,:]
+df7 = df.iloc[14892:,:]
+new_df = pd.concat([df1,df2,df3,df4,df5,df6,df7], axis = 0)
+new_df.shape
+(12102, 64)
+```
+###list od feautres to be droped from new_df dataframe
+columns_to_drop = ['SMMNCPB','SMNUM5CD', 'SMGAPPCT', 'SMCGLGTH', 'SMMNCV','SMCENTER','SMTSPAX','SMGTC','SMNUMGPS','SM550NRM', 'SM350NRM', 'SMPTHNTS']
+new_df.drop(columns = columns_to_drop, inplace = True)
+new_df.shape
+(12102, 52)
+```
 
 Add additional notes about how to deploy this on a live system
 
@@ -78,28 +162,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * etc
 
 
-![Image_1](/img/capstone-1.png) 
 
-![Image_2](/img/capstone-2.png)
-
-![Image_3](/img/capstone-3.png)
-
-![Image_4](/img/capstone-4.png)
-
-![Image_5](/img/capstone-5.png)
-
-![Image_12](/img/capstone-12.png)
-
-![Image_13](/img/capstone-13.png)
-
-![Image_6](/img/capstone-6.png)
-
-![Image_7](/img/capstone-7.png)
-
-![Image_8](/img/capstone-8.png)
-
-![Image_9](/img/capstone-9.png)
-
-![Image_10](/img/capstone-10.png)
-
-![Image_11](/img/capstone-11.png)
