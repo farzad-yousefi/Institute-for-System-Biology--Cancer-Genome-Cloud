@@ -128,6 +128,11 @@ new_df.drop(columns = columns_to_drop, inplace = True)
 new_df.shape
 (12102, 52)
 ```
+### plotting the histograms of the whole numeric data
+```
+new_df.hist(figsize= (30,30), bins = 50)
+plt.tight_layout
+```
 
 Add additional notes about how to deploy this on a live system
 
