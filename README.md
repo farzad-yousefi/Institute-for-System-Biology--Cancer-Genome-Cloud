@@ -1,16 +1,13 @@
-<<<<<<< HEAD
 # Institute-for-System-Biology--Cancer-Genome-Cloud
 ## EDA of Sample Attributes
 ### Data Description
 
-![Image_1](/img/capstone-1.png)
-=======
 # Study of Sample Atrributes Used for Genomic Databases Development
 
 The Genotype-Tissue Expression (GTEx) project aims to provide to the scientific community a resource with which to study human gene expression and regulation and its relationship to genetic variation. This project will collect and analyze multiple human tissues from donors who are also densely genotyped, to assess genetic variation within their genomes.
 Correlations between genotype and tissue-specific gene expression levels will help identify regions of the genome that influence whether and how much a gene is expressed.
 
-## importing libraries
+### importing libraries
 
 ```python
 import numpy as np
@@ -140,7 +137,7 @@ new_df.shape
 new_df.hist(figsize= (30,30), bins = 50)
 plt.tight_layout
 ```
-
+![Image_1](/img/13.png)
 Add additional notes about how to deploy this on a live system
 
 ## Built With
