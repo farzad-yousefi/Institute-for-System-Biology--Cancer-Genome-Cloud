@@ -138,8 +138,31 @@ new_df.shape
 new_df.hist(figsize= (30,30), bins = 50)
 plt.tight_layout
 ```
-![Image_1](/img/13.png)
+![Image_1](/img/12.png)
 Add additional notes about how to deploy this on a live system
+
+### plotting scatterplots for 10 numeric features
+```
+pd.plotting.scatter_matrix(new_df.iloc[:,40:50], figsize=(30,30));
+```
+![Image_2](/img/13.png)
+
+### Understanding the distribution of RIN
+```
+fig, ax = plt.subplots(figsize = (10,4))
+ax.hist(df['SMRIN'], bins=25, stacked = False )
+ax.set_title('Distribution of RIN');
+```
+![Image_3](/img/1.png)
+
+
+### Understanding the distribution of total ischemic time
+```
+fig, ax = plt.subplots(figsize = (10,4))
+ax.hist(df['SMTSPAX'], bins=25, stacked = False )
+ax.set_title('Time spent in PAX fixative');
+```
+![Image_4](/img/2.png)
 
 ## Built With
 
