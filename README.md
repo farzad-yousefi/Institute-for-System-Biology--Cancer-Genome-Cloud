@@ -124,7 +124,7 @@ new_df = pd.concat([df1,df2,df3,df4,df5,df6,df7], axis = 0)
 new_df.shape
 (12102, 64)
 ```
-### list od feautres to be droped from new_df dataframe
+### list of feautres to be droped from new_df dataframe
 ``` columns_to_drop = ['SMMNCPB','SMNUM5CD', 'SMGAPPCT', 'SMCGLGTH', 'SMMNCV','SMCENTER','SMTSPAX','SMGTC','SMNUMGPS','SM550NRM', 'SM350NRM', 'SMPTHNTS']
 new_df.drop(columns = columns_to_drop, inplace = True)
 new_df.shape
