@@ -1,6 +1,4 @@
 # Institute-for-System-Biology--Cancer-Genome-Cloud
-## EDA of Sample Attributes
-### Data Description
 
 # Study of Sample Atrributes Used for Genomic Databases Development
 
@@ -156,14 +154,32 @@ ax.set_title('Distribution of RIN');
 ![Image_3](/img/1.png)
 
 
-### Understanding the distribution of total ischemic time
+### Understanding the distribution of time spent in PAX fixitive
 ```
 fig, ax = plt.subplots(figsize = (10,4))
 ax.hist(df['SMTSPAX'], bins=25, stacked = False )
 ax.set_title('Time spent in PAX fixative');
 ```
+![Image_4](/img/3.png)
+
+### Understanding the distribution of total ischemic time
+```
+fig, ax = plt.subplots(figsize = (10,4))
+ax.hist(df['SMTSISCH'], bins=25, stacked = False )
+ax.set_title('Distribution of total ischemic time');
+```
 ![Image_4](/img/2.png)
 
+### plotting Total Ischemic time vs. Autolysis score
+```
+fig, ax = plt.subplots()
+ax.bar(df.groupby('SMATSSCR').mean().index, df.groupby('SMATSSCR').mean()['SMTSISCH'])
+ax.set_ylim(400,900)
+ax.set_xlim(-1,4)
+ax.set_xlabel('Autolysis Score, assigned by a pathologist\nduring a visual inspection of the histology\n image. 0 to 3 (None, Mild, Moderate, and Severe)')
+ax.set_ylabel('Total Ischemic time for a sample')
+```
+![Image_5](/img/4.png)
 ## Built With
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
