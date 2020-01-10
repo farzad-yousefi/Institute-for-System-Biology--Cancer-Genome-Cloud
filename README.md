@@ -238,16 +238,55 @@ ax.tick_params(axis='both', which='major', labelsize=20);
 ```
 ![Image_5](/img/8.png)
 
+### plotting top 10 tissue that sample were taken from
+```python
+SMTS_df = df.groupby('SMTS').count().sort_values('SUBJID', ascending = False).head(10)
+SMTS_df.head(10)
+fig, ax = plt.subplots(figsize= (20,6))
+ax.bar(SMTS_df.index, height = SMTS_df['SUBJID'])
+fig.suptitle('Sample Origin Tissue', fontsize=25)
+plt.rc('xtick', labelsize=15) 
+plt.rc('ytick', labelsize=20)
+ax.set_xticklabels(SMTS_df.index,rotation=-45, fontsize=25, ha = 'left');
 
+```
+![Image_5](/img/9.png)
 
+### plotting top 5 nucleic acid isolation batch
+```python
+SMNABTCHT_df = df.groupby('SMNABTCHT').count().sort_values('SUBJID', ascending = False).head(6)
+SMNABTCHT_df.head(5)
+fig, ax = plt.subplots(figsize= (10,4))
+ax.bar(SMNABTCHT_df.index, height = SMNABTCHT_df['SUBJID'])
+fig.suptitle('Type of nucleic acid isolation batch', fontsize=25 )
+plt.rc('xtick', labelsize=25)
+plt.rc('ytick', labelsize=20)
+ax.set_xticklabels(SMNABTCHT_df.index,rotation=-45, fontsize=20, ha = 'left');
 
+```
 
+![Image_5](/img/10.png)
 
+### plotting some correlations
+```python
+fig, ax = plt.subplots(figsize = (12,6))
+ax.scatter(df['SMMPUNRT'], df['SMEXPEFF'])
+ax.set_xlabel('Mapped Unique Rate of Total:\n Ratio of mapping of reads that were aligned\n and were not duplicates to total reads', size = 25)
+ax.set_ylabel('Expression Profiling\n Efficiency: Ratio of exon\n reads to total reads', size = 25);
+```
+![Image_5](/img/11.png)
 
+### plotting performance of top 6 methods
 
+```python
+fig, ax = plt.subplots(figsize= (14,4))
+ax.bar(new_df.groupby('SMNABTCHT').mean()['SMEXPEFF'].index, new_df.groupby('SMNABTCHT').mean()['SMEXPEFF'])
+ax.set_ylabel('Expression Profiling Efficiency:\n Ratio of exon reads to total reads', size = 25)
+ax.set_xticklabels(new_df.groupby('SMNABTCHT').mean()['SMEXPEFF'].index,rotation=-45, fontsize=20, ha = 'left')
+ax.set_ylim(0.5,0.85);
 
-
-
+```
+![Image_5](/img/14.png)
 
 
 
