@@ -2,13 +2,16 @@
 
 Correlations between genotype and tissue-specific gene expression levels will help identify regions of the genome that influence whether and how much a gene is expressed. GTEx helps researchers to understand inherited susceptibility to disease and will be a resource database and tissue bank for many studies in the future.
 
+## importing libraries
 
-
-
-
-## Running the tests
-
-Explain how to run the automated tests for this system
+```ruby
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import scipy.stats as stats
+%matplotlib inline
+```
 
 ### Break down into end to end tests
 
